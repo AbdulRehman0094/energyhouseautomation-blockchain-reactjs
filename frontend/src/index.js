@@ -17,13 +17,12 @@ root.render(
     <Router>
       <Routes>
 
-       <Route path='/userhome' component={<MyHomePage />} />
+        <Route path='/dashboard/userhome' component={<MyHomePage />} />
         <Route path='/energystatus' component={<EnergyStatusPage />} />
         <Route path='/accountbalance' component={<AccountBalancePage />} />
-         <Route path='/dashboard' element={<UserDashoard />} />
-        <Route path='/energyusage' element={<RenderStatus />} />
-        <Route path='/registration' element={<HomeRegistrationPage />} />
-        
+        <Route path='/dashboard' element={<UserDashoard />} />
+        {/* <Route path='/energyusage' element={<RenderStatus />} /> */}
+
         <Route path='/' element={<App />} />
       </Routes>
     </Router>

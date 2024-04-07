@@ -1,12 +1,14 @@
 import React from 'react';
 import UserDashoard from './UserDashoard';
+import Sidebar from '../Sidebar';
 
 function MyHomePage() {
   return (
-    <> 
-    {/* <UserDashoard/> */}
-    
-    <div>Hi</div></>
+    <>
+      <Sidebar />
+      {/* <UserDashoard/> */}
+
+      <div>MyHomePage</div></>
   );
 }
 
