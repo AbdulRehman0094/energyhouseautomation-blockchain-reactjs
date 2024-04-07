@@ -5,19 +5,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomeRegistrationPage from './pages/HomeRegistration';
-import EnergyUsageStatus from './pages/EnergyUsageStatus';
 import RenderStatus from './pages/RenderStatus';
 import UserDashoard from './pages/UserDashoard';
-
+import MyHomePage from './pages/MyHomePage';
+import EnergyStatusPage from './pages/EnergyStatusPage';
+import AccountBalancePage from './pages/AccountBalancePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-      <Route path='/dashboard' element={<UserDashoard />} />
+
+       <Route path='/userhome' component={<MyHomePage />} />
+        <Route path='/energystatus' component={<EnergyStatusPage />} />
+        <Route path='/accountbalance' component={<AccountBalancePage />} />
+         <Route path='/dashboard' element={<UserDashoard />} />
         <Route path='/energyusage' element={<RenderStatus />} />
         <Route path='/registration' element={<HomeRegistrationPage />} />
+        
         <Route path='/' element={<App />} />
       </Routes>
     </Router>
