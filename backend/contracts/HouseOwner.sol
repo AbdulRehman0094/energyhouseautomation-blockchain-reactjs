@@ -19,4 +19,12 @@ contract HouseOwner {
     function isOwnerExist(address _userAddress) public view returns (bool) {
         return users[_userAddress].userAddress != address(0);
     }
+
+    function getOwnerDetails(
+        address _userAddress
+    ) external view returns (string memory, address) {
+        require(isOwnerExist(_userAddress), "User does not exist");
+        Owner memory owner = users[_userAddress];
+        return (owner.username, owner.userAddress);
+    }
 }

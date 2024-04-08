@@ -6,21 +6,26 @@ contract GridStation {
     uint256 public totalSoldToGrid;
     uint256 public totalBoughtFromGrid;
 
-    uint256 public constant sellUnitsToGridPrice = 100 wei; // per unit
-    uint256 public constant buyUnitsFromGridPrice = 50 wei; // per unit
+    uint256 public constant sellUnitsToGridPrice = 1000000000000000000 wei; // per unit
+    uint256 public constant buyUnitsFromGridPrice = 2000000000000000000 wei; // per unit
+    constructor() payable {}
 
     struct HouseRecord {
         uint256 totalUnitsSold;
         uint256 unitsSoldButNotPaid;
     }
 
+    receive() external payable {}
+
     mapping(address => HouseRecord) public houseRecords;
 
     function sellUnitsToGrid(uint256 _units) external payable {
+        uint256 amountToPay = _units * sellUnitsToGridPrice;
         require(
-            msg.value == _units * sellUnitsToGridPrice,
-            "Insufficient payment"
+            address(this).balance >= amountToPay,
+            "Grid station does not have enough funds"
         );
+
         totalSoldToGrid += _units;
         houseRecords[msg.sender].totalUnitsSold += _units;
         houseRecords[msg.sender].unitsSoldButNotPaid += _units;
@@ -29,13 +34,18 @@ contract GridStation {
         }
     }
 
-    function buyUnitsFromGrid(uint256 _units) external {
-        require(_units <= soldUnits, "Insufficient units available");
-        // Transfer payment to house owner
-        payable(msg.sender).transfer(_units * buyUnitsFromGridPrice);
-        // Update sold units count
-        soldUnits -= _units;
+    function buyUnitsFromGrid(uint256 _units) external payable {
+        uint256 totalPrice = _units * buyUnitsFromGridPrice;
+        require(msg.value >= totalPrice, "Insufficient payment");
+
+        totalSoldToGrid -= _units;
         totalBoughtFromGrid += _units;
+
+        // If there's excess ether sent by the caller, refund it
+        uint256 excessAmount = msg.value - totalPrice;
+        if (excessAmount > 0) {
+            payable(msg.sender).transfer(excessAmount);
+        }
     }
 
     function payHouse(address _houseOwner) private {

@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "./GridStation.sol";
+
 contract House {
     struct HouseInfo {
         string houseName;
@@ -12,8 +14,12 @@ contract House {
         address gridStation;
     }
 
+    constructor() payable {}
+
+    receive() external payable {}
+
     mapping(uint256 => HouseInfo) public houses;
-    uint256 public houseCount;
+    uint256 public houseCount = 0;
 
     // Event to emit when energy is bought or sold
     event EnergyTransaction(
@@ -25,10 +31,11 @@ contract House {
     modifier checkEnergyBalance(uint256 _houseId) {
         uint256 production = houses[_houseId].energyProduction;
         uint256 consumption = houses[_houseId].energyConsumption;
-        if (production < consumption) {
+        if (consumption > production) {
             uint256 unitsToBuy = consumption - production;
             buyFromGrid(_houseId, unitsToBuy);
-        } else if (production > consumption) {
+        }
+        if (production > consumption) {
             uint256 unitsToSell = production - consumption;
             sellToGrid(_houseId, unitsToSell);
         }
@@ -57,7 +64,7 @@ contract House {
     function getAllHouses() external view returns (HouseInfo[] memory) {
         HouseInfo[] memory allHouses = new HouseInfo[](houseCount);
         for (uint256 i = 1; i <= houseCount; i++) {
-            allHouses[i - 1] = houses[i];
+            allHouses[i - 1] = houses[i - 1];
         }
         return allHouses;
     }
@@ -87,15 +94,40 @@ contract House {
         houses[_houseId].energyConsumption = _newConsumption;
     }
 
-    // Internal method to buy units from grid station
     function buyFromGrid(uint256 _houseId, uint256 _units) internal {
-        // Call grid station contract to buy units
-        // emit EnergyTransaction(houses[_houseId].houseOwner, houses[_houseId].gridStation, _units);
+        require(_units > 0, "Invalid units to buy");
+        require(
+            houses[_houseId].gridStation != address(0),
+            "Grid station address not set"
+        );
+        address payable gridStationAddr = payable(houses[_houseId].gridStation);
+        GridStation gridStation = GridStation(gridStationAddr);
+        uint256 amount = _units * gridStation.buyUnitsFromGridPrice();
+        gridStation.buyUnitsFromGrid{value: amount}(_units);
+        emit EnergyTransaction(
+            msg.sender,
+            houses[_houseId].gridStation,
+            _units
+        );
     }
 
     // Internal method to sell units to grid station
     function sellToGrid(uint256 _houseId, uint256 _units) internal {
-        // Call grid station contract to sell units
-        // emit EnergyTransaction(houses[_houseId].gridStation, houses[_houseId].houseOwner, _units);
+        require(_units > 0, "Invalid units to sell");
+        require(
+            houses[_houseId].gridStation != address(0),
+            "Grid station address not set"
+        );
+        address payable gridStationAddr = payable(houses[_houseId].gridStation);
+        GridStation gridStation = GridStation(gridStationAddr);
+        gridStation.sellUnitsToGrid(_units);
+        emit EnergyTransaction(
+            msg.sender,
+            houses[_houseId].gridStation,
+            _units
+        );
+        uint256 amount = _units * gridStation.buyUnitsFromGridPrice();
+        address payable houseOwner = payable(houses[_houseId].houseOwner);
+        houseOwner.transfer(amount);
     }
 }
