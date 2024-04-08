@@ -1,14 +1,20 @@
 import React from 'react';
-import UserDashoard from './UserDashoard';
 import Sidebar from '../Sidebar';
 
-function MyHomePage() {
+function MyHomePage({ id, name }) {
   return (
     <>
+    <div className='dashboard-container'>
       <Sidebar />
-      {/* <UserDashoard/> */}
-
-      <div>MyHomePage</div></>
+      <div className='background-image'>
+          <div className="myhousecard text ">
+            <div className="padding ">House Number: {id}</div>
+            <div className="padding">House Name:{name}</div>
+         
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
 

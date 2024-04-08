@@ -20,7 +20,7 @@ function App() {
       <h2>Home Energy Automation</h2>
       <div className='card'>
         {showcard && <><button onClick={registerHandler}>Register Your Home</button>
-        <Link to='/all-homes'><button>View Energy Houses</button></Link></>}
+        <Link to='/energyhomesdata'><button>View Energy Houses</button></Link></>}
         {showRegistration && <HomeRegistrationPage />}
       </div>
     </div>

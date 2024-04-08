@@ -16,18 +16,17 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-
-        <Route path='/dashboard/userhome' component={<MyHomePage />} />
-        <Route path='/energystatus' component={<EnergyStatusPage />} />
-        <Route path='/accountbalance' component={<AccountBalancePage />} />
+        <Route path='/dashboard/userhome' element={<MyHomePage />} />
+        <Route path='/energystatus' element={<EnergyStatusPage />} />
+        <Route path='/accountbalance' element={<AccountBalancePage />} />
         <Route path='/dashboard' element={<UserDashoard />} />
-        {/* <Route path='/energyusage' element={<RenderStatus />} /> */}
-
+        <Route path='/energyhomesdata' element={<RenderStatus />} />
         <Route path='/' element={<App />} />
       </Routes>
     </Router>
   </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
