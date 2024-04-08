@@ -1,21 +1,15 @@
-import React from 'react'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Sidebar from '../Sidebar';
-import { Route, Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
-import MyHomePage from './MyHomePage';
-import EnergyStatusPage from './EnergyStatusPage';
-import AccountBalancePage from './AccountBalancePage';
-import RenderStatus from './RenderStatus';
 
-function UserDashoard() {
-
+function UserDashboard() {
   return (
-    <div>
+    <div className='dashboard-container'>
       <Sidebar />
-      UserDashoard
+      <div className='background-image'>
+        <h1>Welcome {localStorage.getItem("userAddress").toUpperCase()}</h1>
+      </div>
     </div>
-  )
+  );
 }
 
-export default UserDashoard
+export default UserDashboard;

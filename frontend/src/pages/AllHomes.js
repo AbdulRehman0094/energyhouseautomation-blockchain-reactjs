@@ -1,8 +1,9 @@
 import React from 'react'
 
-function EnergyUsageStatus({ id, name, energyProduced,energyConsumed }) {
+function AllHomes({ id, name, energyProduced,energyConsumed }) {
 
     return (
+        
         <div className='grid'>
             <div className="card text">
                 <div className="">House Number: {id}</div>
@@ -13,4 +14,4 @@ function EnergyUsageStatus({ id, name, energyProduced,energyConsumed }) {
     )
 }
 
-export default EnergyUsageStatus
+export default AllHomes
