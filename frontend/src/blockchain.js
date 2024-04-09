@@ -9,10 +9,15 @@ const web3 = new Web3('http://127.0.0.1:9545/');
 
 
 const houseContract = new web3.eth.Contract(houseAbi, houseContractAddress);
-
 const gridStationContract = new web3.eth.Contract(gridStationAbi, gridStationAddress);
+const houseOwnerContract = new web3.eth.Contract(gridStationAbi, houseOwnerContractAddress);
+
+
 
 // Method to add a new house
+
+
+
 export async function addHouse(houseName, houseAddress, gridStationAddress, userAddress) {
     try {
 
@@ -150,6 +155,29 @@ async function getHouseRecordFromGrid(userAddress) {
         console.error('Error adding house:', error);
     }
 }
+
+export const registerOwner = async ( username, userAddress) => {
+    await houseOwnerContract.methods.registerOwner(username).send({ from: userAddress });
+    console.log('Owner registered successfully.');
+};
+
+
+
+
+export const isOwnerExist = async (userAddress) => {
+    const result = await houseOwnerContract.methods.isOwnerExist(userAddress).call();
+    console.log('Owner exists:', result);
+    return result
+};
+
+
+
+const getOwnerDetails = async ( userAddress) => {
+    const result = await houseOwnerContract.methods.getOwnerDetails(userAddress).call();
+    console.log('Owner username:', result[0]);
+    console.log('Owner address:', result[1]);
+};
+
 
 // Call the methods as needed
 // Example usage:

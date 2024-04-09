@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { addHouse } from '../blockchain';
+import { isOwnerExist } from '../blockchain';
+import { registerOwner } from '../blockchain';
+
 
 function HomeRegistrationPage() {
   const gridaddress= '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
@@ -38,8 +41,14 @@ function HomeRegistrationPage() {
   const [hide, setHide] = useState(false);
 
   const registerHandler = () => {
-    localStorage.setItem('userAddress', userAddress);
+    const result= isOwnerExist(userAddress);
+    console.log(result);
+
+    if(result){
+      localStorage.setItem('userAddress', userAddress);
     addHouse(name,address,gridaddress,userAddress);
+    registerOwner("abc",userAddress);
+    }
     setHide(true);
    
   };

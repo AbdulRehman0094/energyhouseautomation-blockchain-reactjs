@@ -1,9 +1,9 @@
 const { Web3 } = require('web3');
 const { abi: houseAbi } = require('./build/contracts/House.json');
 const { abi: gridStationAbi } = require('./build/contracts/GridStation.json');
-const houseContractAddress = '0x9CEEF5fC80dC527E54C2C6FB04cF0b5800c1821F';
-const gridStationAddress = '0xc44A77cA13D522777C4CA72EAb17df52D42993D9';
-const houseOwnerContractAddress = '0xc6EEe0A916079bF9989227f922BEF44a110307C8';
+const houseContractAddress = '0xEcb6F6124827BE59e3C6d24Ed3FFF5c8975f142f';
+const gridStationAddress = '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
+const houseOwnerContractAddress = '0xaF5fF1573A6382cE09538710b65AC99e52bCEa6a';
 const web3 = new Web3('http://127.0.0.1:9545/');
 
 
