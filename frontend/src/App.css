@@ -3,6 +3,8 @@
 }
 .dashboard-container {
   display: flex;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .background-image {
@@ -14,6 +16,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0.8;
+  height: 100vh;
 }
 .sidebar{
   display: grid;
@@ -43,10 +46,44 @@
 .flex1 {
   display: flex;
   height: 100%;
-  width: 83vw;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
+.flex2 {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid {
+  display: grid;
+  height: auto;
+  max-height: 90%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 1fr ; 
+  overflow: auto;
+  padding-top: 26px;
+}
+
+.gridm {
+  display: grid;
+  height: auto;
+  max-height: 90%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: 0fr 0fr 0fr; 
+  overflow: auto;
+  padding-top: 26px;
+}
+.flex1.scroll{
+  overflow: auto;
+}
+
 .link{
   text-decoration: none;
   color: inherit;
@@ -77,6 +114,13 @@ img{
   width: 100%;
   height: 100vh;
 }
+.home1 {
+  position: relative; 
+  display: grid;
+  justify-content: center;
+  width: 80%;
+  height: 100vh;
+}
 
 
 .overlay {
@@ -99,18 +143,34 @@ img{
   color: black; 
   text-shadow: 2px 2px 4px rgba(239, 231, 231, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5); 
 }
+
+/*  */
  .card {
   position: relative; 
   display: grid;
+  grid-template-columns: 2;
   justify-items: center;
   align-items: center;
   background: whitesmoke;
   height: 400px;
   width: 400px;
   opacity: 0.9;
-  margin-left: 50px;
-  
+  margin-left: 50px; 
 } 
+
+.card-flow {
+  position: relative; 
+  display: grid;
+  justify-items: start;
+  padding-left: 4px;
+  align-items: center;
+  background: whitesmoke;
+  height: 400px;
+  width: 400px;
+  opacity: 0.9;
+  /* margin-left: 50px;  */
+} 
+
 h1{
   font-size: 50px;
   font-weight: bolder;
@@ -130,7 +190,7 @@ h1{
 
 
 .myhousecard {
-  position: relative; 
+  /* position: relative;  */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -179,7 +239,25 @@ h1{
   transition: background-color 0.3s ease;
  
 }
+.btn {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #3c5167; 
+  width: 380px;
+  height: 100px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+.btn:hover{
+  background-color: #0574ec; 
 
+}
 
 .card button:hover {
   background-color: #0574ec; 
@@ -187,7 +265,7 @@ h1{
 
 .form-container .register-button {
 
-width: 100px;
+width: 100%;
 height: 50px;
 }
 form {
@@ -232,4 +310,9 @@ input {
   to {
     transform: rotate(360deg);
   }
+}
+.bold{
+  font-weight: bold;
+  font-size: large;
+  margin: 8px;
 }

@@ -1,19 +1,13 @@
 import React from 'react';
-import Sidebar from '../Sidebar';
 
-function MyHomePage({ id, name }) {
+function MyHomePage({ name, address }) {
   return (
     <>
-    <div className='dashboard-container'>
-      <Sidebar />
-      <div className='background-image'>
-          <div className="myhousecard text ">
-            <div className="padding ">House Number: {id}</div>
-            <div className="padding">House Name:{name}</div>
-         
-        </div>
-      </div>
-    </div>
+
+   <div className="card text">
+                <div className="">House Name: {name}</div>
+                <div className="">House Address:{address}</div>            
+            </div>
     </>
   );
 }

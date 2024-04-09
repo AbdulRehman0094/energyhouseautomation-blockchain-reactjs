@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { addHouse } from '../blockchain';
 
 function HomeRegistrationPage() {
+  const gridaddress= '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [address, setAddress] = useState('');
   const [userAddress, setUserAddress] = useState('');
 
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
-  const handleNumberChange = (e) => {
-    setNumber(e.target.value);
+  const handleAddressChange = (e) => {
+    setAddress(e.target.value);
   };
 
   const handleUserAddressChange = (e) => {
@@ -20,19 +22,26 @@ function HomeRegistrationPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { name, number, userAddress });
-
-    // Set userAddress in localStorage
-    localStorage.setItem('userAddress', userAddress);
-    // console.log(userAddress)
+    console.log('Form submitted:', { name, address, userAddress });
+    localStorage.setItem('userAddress', userAddress.toString());
   };
+    
+    const isFormEmpty = () => {
+      return !name.trim() && !address.trim() && !userAddress.trim();
+    };
+  
+   
+    const isFormFilled = () => {
+      return name.trim() && address.trim() && userAddress.trim();
+    };
 
   const [hide, setHide] = useState(false);
+
   const registerHandler = () => {
     localStorage.setItem('userAddress', userAddress);
+    addHouse(name,address,gridaddress,userAddress);
     setHide(true);
-    console.log(hide);
-    console.log(userAddress)
+   
   };
 
   return (
@@ -45,15 +54,15 @@ function HomeRegistrationPage() {
             <input type="text" value={name} onChange={handleNameChange} />
           </label>
           <label>
-            House Number:
-            <input type="text" value={number} onChange={handleNumberChange} />
+            House Address:
+            <input type="text" value={address} onChange={handleAddressChange} />
           </label>
           <label>
             User Address:
             <input type="text" value={userAddress} onChange={handleUserAddressChange} />
           </label>
-          <Link to='/dashboard'>
-            <button type="submit" onClick={registerHandler} className='register-button'>Register</button>
+          <Link to='/dashboard'className='comp'>
+            <button type="submit" onClick={registerHandler} className='register-button' disabled={!isFormEmpty() && !isFormFilled()}>Register</button>
           </Link>
         </form>
       </div>

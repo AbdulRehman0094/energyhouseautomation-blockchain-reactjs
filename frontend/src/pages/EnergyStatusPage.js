@@ -1,19 +1,12 @@
 import React from 'react'
-import Sidebar from '../Sidebar'
-function EnergyStatusPage({energyProduction, energyConsumption}) {
+
+function EnergyStatusPage({ energyProduced, energyConsumed }) {
   return (
-   <div className='dashboard-container'>
-      <Sidebar />
-      <div className='background-image'>
-          <div className="myhousecard text ">
-            <div className="padding ">Energy Production: {energyProduction}</div>
-            <div className="padding">Energy Consumption:{energyConsumption}</div>
-            <div className="padding">Energy Bought:{energyConsumption}</div>
-            <div className="padding">Energy Sold:{energyConsumption}</div>
-        
-        </div>
-      </div>
-    </div>  )
+    <div className="card text">
+
+      <div className="">Enery Produced: {energyProduced}</div>
+      <div className=''>Energy Consumed:{energyConsumed}</div>
+    </div>)
 }
 
 export default EnergyStatusPage

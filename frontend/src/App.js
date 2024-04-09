@@ -1,4 +1,3 @@
-// App.js
 import './App.css';
 import { Link } from 'react-router-dom'; 
 import React, { useState } from 'react';
@@ -20,7 +19,7 @@ function App() {
       <h2>Home Energy Automation</h2>
       <div className='card'>
         {showcard && <><button onClick={registerHandler}>Register Your Home</button>
-        <Link to='/energyhomesdata'><button>View Energy Houses</button></Link></>}
+        <Link to='/allhomesrender'><button >View Energy Houses</button></Link></>}
         {showRegistration && <HomeRegistrationPage />}
       </div>
     </div>

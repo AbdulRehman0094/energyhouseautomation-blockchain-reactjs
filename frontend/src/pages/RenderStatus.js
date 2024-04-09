@@ -1,16 +1,19 @@
 import React from 'react'
 import AllHomes from './AllHomes';
 import { useEffect, useState } from 'react';
-import Sidebar from '../Sidebar';
+import { getAllHouses } from '../blockchain';
+
 
 function RenderStatus() {
+
   const [houseData, setHouseData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = [];
-        // const data = await getAllDustbins();
+        const data = await getAllHouses();
         setHouseData(data);
+        console.log(data)
       } catch (error) {
         console.error('Error fetching homes:', error);
       }
@@ -21,26 +24,25 @@ function RenderStatus() {
 
   return (
     <>
-      <div className='home'>
-        <div className='overlay'></div>
-
-        <div className="grid-container">
-          {houseData?.map((house) => (
-            <AllHomes
+      <div className='dashboard-container'>       
+        <div className='background-image'>
+          <div className="gridm">
+            {houseData?.map((house) => (
+              <AllHomes 
               key={house.id}
-              id={house.id}
-              name={house.name}
-              energyProduced={house.energyProduced}
-              energyConsumed={house.energyConsumed}
-            />
-          ))}
+              id={house.houseId}
+              name={house.houseName}
+              address={house.houseAddress}
+              energyProduced={house.energyProduction.toString()}
+              energyConsumed={house.energyConsumption.toString()}
+              houseowner={house.houseOwner}
+              />
+            ))}
+          </div>
         </div>
-
       </div>
-
-      
-
     </>
+    
   )
 }
 

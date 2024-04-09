@@ -6,7 +6,7 @@ function UserDashboard() {
     <div className='dashboard-container'>
       <Sidebar />
       <div className='background-image'>
-        <h1>Welcome {localStorage.getItem("userAddress").toUpperCase()}</h1>
+        <h1>Welcome </h1><span className='bold'>{localStorage.getItem("userAddress").toUpperCase()}</span>
       </div>
     </div>
   );
