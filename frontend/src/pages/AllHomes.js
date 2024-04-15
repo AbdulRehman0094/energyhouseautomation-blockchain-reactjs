@@ -6,10 +6,10 @@ function AllHomes({ address, name, energyProduced,energyConsumed }) {
         
        <div className=''>
             <div className="card-flow text addedStyles ">
-                <div className="">House Name: <span className='styles'>{name}</span></div>
-                <div className="">House Address:<span  className='styles'>{address}</span></div>
-                <div className="">Enery Producing: <span  className='styles'>{energyProduced}</span></div>
-                <div className=''>Energy Consuming:<span  className='styles'>{energyConsumed}</span></div>
+                <h2 className="">House Address:<span  className='styles'>{address}</span></h2>
+                <h2 className="">Enery Producing: <span  className='styles'>{energyProduced}</span></h2>
+                <h2 className=''>Energy Consuming:<span  className='styles'>{energyConsumed}</span></h2>
+                <h2 className="">House Name: <span className='styles'>{name}</span></h2>
             </div>
     </div>)
 }
