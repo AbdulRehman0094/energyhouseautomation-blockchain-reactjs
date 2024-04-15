@@ -2,7 +2,7 @@ import React from "react";
 import MyHomePage from "./MyHomePage";
 import Sidebar from "../Sidebar";
 import { useState, useEffect } from "react";
-import { getAllHouses } from "../blockchain";
+import { getAllHouses } from "../energyhouse";
 
 const MyHomerender = () => {
   const [houseData, setHouseData] = useState([]);

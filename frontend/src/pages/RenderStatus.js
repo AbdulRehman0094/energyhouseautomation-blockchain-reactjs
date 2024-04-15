@@ -1,7 +1,7 @@
 import React from 'react'
 import AllHomes from './AllHomes';
 import { useEffect, useState } from 'react';
-import { getAllHouses } from '../blockchain';
+import { getAllHouses } from '../energyhouse';
 
 
 function RenderStatus() {

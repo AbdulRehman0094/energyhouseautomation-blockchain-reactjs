@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { addHouse } from "../blockchain";
-import { isOwnerExist } from "../blockchain";
-import { registerOwner } from "../blockchain";
+import { addHouse } from "../energyhouse";
+import { isOwnerExist } from "../energyhouse";
+import { registerUser } from "../energyhouse";
 import { useNavigate } from "react-router-dom";
 
 function HomeRegistrationPage() {
-  const gridaddress = "0x591D8c585558b2cCa052A9B8e042d3EffA379deA";
+  const gridaddress = "0xbd09974f8e44a5a06e62ac7d613c62914c846698";
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [userAddress, setUserAddress] = useState("");
@@ -36,13 +36,14 @@ function HomeRegistrationPage() {
 
   const registerHandler = async () => {
     try {
+      debugger;
       localStorage.setItem("userAddress", userAddress);
       const result= await isOwnerExist(userAddress)
       if(result){
-        alert('Already Registered. Cannot Register Again!')
+        await addHouse(name, address, gridaddress, userAddress);
       }
       else{
-        await registerOwner(name, userAddress);
+        await registerUser(name, userAddress);
         await addHouse(name, address, gridaddress, userAddress);
         alert('House Succefully Registered!')
 
@@ -84,6 +85,7 @@ function HomeRegistrationPage() {
               Register
             </button>
           </Link>
+          <Link to='/loginpage' className="none"><div>or want to Login?</div></Link>
         </form>
       </div>
     </>

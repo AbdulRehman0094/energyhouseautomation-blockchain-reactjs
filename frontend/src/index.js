@@ -10,6 +10,7 @@ import MyHomePage from './pages/MyHomePage';
 import AccountBalancePage from './pages/AccountBalancePage';
 import MyHomerender from './pages/MyHomerender';
 import EnergyStatusrender from './pages/EnergyStatusrender';
+import LoginPage from './pages/LoginPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,8 @@ root.render(
         <Route path='/accountbalanc' element={<AccountBalancePage />} />
         <Route path='/dashboard' element={<UserDashoard />} />
         <Route path='/allhomesrender' element={<RenderStatus />} />
+        <Route path='/loginpage' element={<LoginPage />} />
+
         <Route path='/' element={<App />} />
       </Routes>
     </Router>

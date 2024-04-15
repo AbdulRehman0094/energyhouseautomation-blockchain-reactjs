@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { getAllHouses } from '../blockchain';
+import { getAllHouses } from '../energyhouse';
 import Sidebar from '../Sidebar';
 import EnergyStatusPage from './EnergyStatusPage'
 
@@ -33,8 +33,10 @@ const EnergyStatusrender = () => {
           <div className="grid">
             {houseData?.map((house) => (
               <EnergyStatusPage
-                energyProduced={house.energyProduction.toString()}
-                energyConsumed={house.energyConsumption.toString()}
+                energyProduced={house.energyProduction?.toString()}
+                energyConsumed={house.energyConsumption?.toString()}
+                bought={house.boughtFromGrid?.toString()}
+                sold={house.soldToGrid?.toString()}
               />
             ))}
           </div>
