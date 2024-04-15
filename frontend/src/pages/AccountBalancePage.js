@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar';
-import { checkBalance } from '../blockchain';
+import { getAccountBalance } from '../energyhouse';
 
 function AccountBalancePage() {
   const [currentBalance, setBalance] = useState(null);
 
   const showBalance = async () => {
     try {
-      const result = await checkBalance(localStorage.getItem("userAddress"));
+      debugger;
+      const result = await getAccountBalance(localStorage.getItem("userAddress"));
       setBalance(result);
     } catch (error) {
       console.error('Error fetching balance:', error);
@@ -19,7 +20,7 @@ function AccountBalancePage() {
     <div className='dashboard-container'>
       <Sidebar />
       <div className='background-image'>
-        <div className="myhousecard text">
+        <div className="myhousecard cardnew  text">
           <button onClick={showBalance} className='btn'>Click Me</button>
           <div className="padding">Current Balance: {currentBalance !== null ? currentBalance : 'Loading...'}ETH</div>
         </div>
