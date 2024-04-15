@@ -1,16 +1,12 @@
 const { Web3 } = require('web3');
 
-// Initialize Web3 with your provider
-const web3 = new Web3('http://127.0.0.1:9545/'); // Update with your provider URL
+const web3 = new Web3('http://127.0.0.1:9545/');
 
-// Load the contract ABI
 const contractABI = require('./build/contracts/EnergyManagementSystem.json').abi;
 
-// Initialize the contract instance
-const contractAddress = '0xE403eE6AbCD9dE0F7FCAa4f9b1F46a4f97d2E73C'; // Update with your contract address
+const contractAddress = '0xE403eE6AbCD9dE0F7FCAa4f9b1F46a4f97d2E73C';
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
-// Method to register a new user
 async function registerUser(username) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -21,7 +17,6 @@ async function registerUser(username) {
     }
 }
 
-// Method to add a new house
 async function addHouse(houseName, houseAddress, gridStation) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -32,7 +27,6 @@ async function addHouse(houseName, houseAddress, gridStation) {
     }
 }
 
-// Method to get all houses
 async function getAllHouses() {
     try {
         const result = await contract.methods.getAllHouses().call();
@@ -42,7 +36,6 @@ async function getAllHouses() {
     }
 }
 
-// Method to get house by ID
 async function getHouseById(houseId) {
     try {
         const result = await contract.methods.getHouseById(houseId).call();
@@ -52,7 +45,6 @@ async function getHouseById(houseId) {
     }
 }
 
-// Method to update energy production for a house
 async function updateEnergyProduction(houseId, newProduction) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -63,7 +55,6 @@ async function updateEnergyProduction(houseId, newProduction) {
     }
 }
 
-// Method to update energy consumption for a house
 async function updateEnergyConsumption(houseId, newConsumption) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -74,7 +65,6 @@ async function updateEnergyConsumption(houseId, newConsumption) {
     }
 }
 
-// Method to buy energy from grid
 async function buyFromGrid(houseId, units, value) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -85,7 +75,6 @@ async function buyFromGrid(houseId, units, value) {
     }
 }
 
-// Method to sell energy to grid
 async function sellToGrid(houseId, units) {
     try {
         const accounts = await web3.eth.getAccounts();
@@ -96,7 +85,6 @@ async function sellToGrid(houseId, units) {
     }
 }
 
-// Example usage
 async function main() {
     // Call your methods here
     // registerUser('hello');

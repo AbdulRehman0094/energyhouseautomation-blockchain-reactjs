@@ -7797,15 +7797,15 @@
     "absolutePath": "project:/contracts/HouseOwner.sol",
     "exportedSymbols": {
       "HouseOwner": [
-        641
+        643
       ]
     },
-    "id": 642,
+    "id": 644,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 556,
+        "id": 558,
         "literals": [
           "solidity",
           "^",
@@ -7822,9 +7822,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 641,
+        "id": 643,
         "linearizedBaseContracts": [
-          641
+          643
         ],
         "name": "HouseOwner",
         "nameLocation": "69:10:2",
@@ -7832,16 +7832,16 @@
         "nodes": [
           {
             "canonicalName": "HouseOwner.Owner",
-            "id": 561,
+            "id": 563,
             "members": [
               {
                 "constant": false,
-                "id": 558,
+                "id": 560,
                 "mutability": "mutable",
                 "name": "username",
                 "nameLocation": "118:8:2",
                 "nodeType": "VariableDeclaration",
-                "scope": 561,
+                "scope": 563,
                 "src": "111:15:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -7850,7 +7850,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 557,
+                  "id": 559,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "111:6:2",
@@ -7863,12 +7863,12 @@
               },
               {
                 "constant": false,
-                "id": 560,
+                "id": 562,
                 "mutability": "mutable",
                 "name": "userAddress",
                 "nameLocation": "145:11:2",
                 "nodeType": "VariableDeclaration",
-                "scope": 561,
+                "scope": 563,
                 "src": "137:19:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -7877,7 +7877,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 559,
+                  "id": 561,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "137:7:2",
@@ -7893,32 +7893,32 @@
             "name": "Owner",
             "nameLocation": "94:5:2",
             "nodeType": "StructDefinition",
-            "scope": 641,
+            "scope": 643,
             "src": "87:77:2",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "a87430ba",
-            "id": 566,
+            "id": 568,
             "mutability": "mutable",
             "name": "users",
             "nameLocation": "205:5:2",
             "nodeType": "VariableDeclaration",
-            "scope": 641,
+            "scope": 643,
             "src": "172:38:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$561_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$563_storage_$",
               "typeString": "mapping(address => struct HouseOwner.Owner)"
             },
             "typeName": {
-              "id": 565,
+              "id": 567,
               "keyName": "",
               "keyNameLocation": "-1:-1:-1",
               "keyType": {
-                "id": 562,
+                "id": 564,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "180:7:2",
@@ -7930,28 +7930,28 @@
               "nodeType": "Mapping",
               "src": "172:25:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$561_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$563_storage_$",
                 "typeString": "mapping(address => struct HouseOwner.Owner)"
               },
               "valueName": "",
               "valueNameLocation": "-1:-1:-1",
               "valueType": {
-                "id": 564,
+                "id": 566,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 563,
+                  "id": 565,
                   "name": "Owner",
                   "nameLocations": [
                     "191:5:2"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 561,
+                  "referencedDeclaration": 563,
                   "src": "191:5:2"
                 },
-                "referencedDeclaration": 561,
+                "referencedDeclaration": 563,
                 "src": "191:5:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Owner_$561_storage_ptr",
+                  "typeIdentifier": "t_struct$_Owner_$563_storage_ptr",
                   "typeString": "struct HouseOwner.Owner"
                 }
               }
@@ -7960,7 +7960,7 @@
           },
           {
             "body": {
-              "id": 591,
+              "id": 593,
               "nodeType": "Block",
               "src": "314:135:2",
               "statements": [
@@ -7968,7 +7968,7 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 576,
+                        "id": 578,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7981,7 +7981,7 @@
                           "arguments": [
                             {
                               "expression": {
-                                "id": 573,
+                                "id": 575,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
@@ -7992,7 +7992,7 @@
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 574,
+                              "id": 576,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -8014,18 +8014,18 @@
                                 "typeString": "address"
                               }
                             ],
-                            "id": 572,
+                            "id": 574,
                             "name": "isOwnerExist",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 610,
+                            "referencedDeclaration": 612,
                             "src": "334:12:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                               "typeString": "function (address) view returns (bool)"
                             }
                           },
-                          "id": 575,
+                          "id": 577,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8048,7 +8048,7 @@
                       },
                       {
                         "hexValue": "5573657220616c726561647920657869737473",
-                        "id": 577,
+                        "id": 579,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8074,7 +8074,7 @@
                           "typeString": "literal_string \"User already exists\""
                         }
                       ],
-                      "id": 571,
+                      "id": 573,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -8088,7 +8088,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 578,
+                    "id": 580,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8104,34 +8104,34 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 579,
+                  "id": 581,
                   "nodeType": "ExpressionStatement",
                   "src": "325:57:2"
                 },
                 {
                   "expression": {
-                    "id": 589,
+                    "id": 591,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 580,
+                        "id": 582,
                         "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 566,
+                        "referencedDeclaration": 568,
                         "src": "393:5:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$561_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$563_storage_$",
                           "typeString": "mapping(address => struct HouseOwner.Owner storage ref)"
                         }
                       },
-                      "id": 583,
+                      "id": 585,
                       "indexExpression": {
                         "expression": {
-                          "id": 581,
+                          "id": 583,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -8142,7 +8142,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 582,
+                        "id": 584,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8163,7 +8163,7 @@
                       "nodeType": "IndexAccess",
                       "src": "393:17:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Owner_$561_storage",
+                        "typeIdentifier": "t_struct$_Owner_$563_storage",
                         "typeString": "struct HouseOwner.Owner storage ref"
                       }
                     },
@@ -8172,11 +8172,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 585,
+                          "id": 587,
                           "name": "_username",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 568,
+                          "referencedDeclaration": 570,
                           "src": "419:9:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -8185,7 +8185,7 @@
                         },
                         {
                           "expression": {
-                            "id": 586,
+                            "id": 588,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -8196,7 +8196,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 587,
+                          "id": 589,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8222,18 +8222,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 584,
+                        "id": 586,
                         "name": "Owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 561,
+                        "referencedDeclaration": 563,
                         "src": "413:5:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Owner_$561_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Owner_$563_storage_ptr_$",
                           "typeString": "type(struct HouseOwner.Owner storage pointer)"
                         }
                       },
-                      "id": 588,
+                      "id": 590,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8245,24 +8245,24 @@
                       "src": "413:28:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Owner_$561_memory_ptr",
+                        "typeIdentifier": "t_struct$_Owner_$563_memory_ptr",
                         "typeString": "struct HouseOwner.Owner memory"
                       }
                     },
                     "src": "393:48:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Owner_$561_storage",
+                      "typeIdentifier": "t_struct$_Owner_$563_storage",
                       "typeString": "struct HouseOwner.Owner storage ref"
                     }
                   },
-                  "id": 590,
+                  "id": 592,
                   "nodeType": "ExpressionStatement",
                   "src": "393:48:2"
                 }
               ]
             },
             "functionSelector": "8ca96de7",
-            "id": 592,
+            "id": 594,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -8270,17 +8270,17 @@
             "nameLocation": "266:13:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 569,
+              "id": 571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 568,
+                  "id": 570,
                   "mutability": "mutable",
                   "name": "_username",
                   "nameLocation": "294:9:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 592,
+                  "scope": 594,
                   "src": "280:23:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8289,7 +8289,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 567,
+                    "id": 569,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "280:6:2",
@@ -8304,12 +8304,12 @@
               "src": "279:25:2"
             },
             "returnParameters": {
-              "id": 570,
+              "id": 572,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "314:0:2"
             },
-            "scope": 641,
+            "scope": 643,
             "src": "257:192:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -8317,7 +8317,7 @@
           },
           {
             "body": {
-              "id": 609,
+              "id": 611,
               "nodeType": "Block",
               "src": "577:71:2",
               "statements": [
@@ -8327,7 +8327,7 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 607,
+                    "id": 609,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8335,24 +8335,24 @@
                     "leftExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 599,
+                          "id": 601,
                           "name": "users",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 566,
+                          "referencedDeclaration": 568,
                           "src": "595:5:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$561_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$563_storage_$",
                             "typeString": "mapping(address => struct HouseOwner.Owner storage ref)"
                           }
                         },
-                        "id": 601,
+                        "id": 603,
                         "indexExpression": {
-                          "id": 600,
+                          "id": 602,
                           "name": "_userAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 594,
+                          "referencedDeclaration": 596,
                           "src": "601:12:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -8366,11 +8366,11 @@
                         "nodeType": "IndexAccess",
                         "src": "595:19:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Owner_$561_storage",
+                          "typeIdentifier": "t_struct$_Owner_$563_storage",
                           "typeString": "struct HouseOwner.Owner storage ref"
                         }
                       },
-                      "id": 602,
+                      "id": 604,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -8378,7 +8378,7 @@
                       "memberLocation": "615:11:2",
                       "memberName": "userAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 560,
+                      "referencedDeclaration": 562,
                       "src": "595:31:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -8391,7 +8391,7 @@
                       "arguments": [
                         {
                           "hexValue": "30",
-                          "id": 605,
+                          "id": 607,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -8413,7 +8413,7 @@
                             "typeString": "int_const 0"
                           }
                         ],
-                        "id": 604,
+                        "id": 606,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8425,14 +8425,14 @@
                           "typeString": "type(address)"
                         },
                         "typeName": {
-                          "id": 603,
+                          "id": 605,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
                           "src": "630:7:2",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 606,
+                      "id": 608,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -8454,15 +8454,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 598,
-                  "id": 608,
+                  "functionReturnParameters": 600,
+                  "id": 610,
                   "nodeType": "Return",
                   "src": "588:52:2"
                 }
               ]
             },
             "functionSelector": "77062b0c",
-            "id": 610,
+            "id": 612,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -8470,17 +8470,17 @@
             "nameLocation": "515:12:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 595,
+              "id": 597,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 594,
+                  "id": 596,
                   "mutability": "mutable",
                   "name": "_userAddress",
                   "nameLocation": "536:12:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 610,
+                  "scope": 612,
                   "src": "528:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8489,7 +8489,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 593,
+                    "id": 595,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "528:7:2",
@@ -8505,17 +8505,17 @@
               "src": "527:22:2"
             },
             "returnParameters": {
-              "id": 598,
+              "id": 600,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 597,
+                  "id": 599,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 610,
+                  "scope": 612,
                   "src": "571:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8524,7 +8524,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 596,
+                    "id": 598,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "571:4:2",
@@ -8538,7 +8538,7 @@
               ],
               "src": "570:6:2"
             },
-            "scope": 641,
+            "scope": 643,
             "src": "506:142:2",
             "stateMutability": "view",
             "virtual": false,
@@ -8546,7 +8546,7 @@
           },
           {
             "body": {
-              "id": 639,
+              "id": 641,
               "nodeType": "Block",
               "src": "766:181:2",
               "statements": [
@@ -8556,11 +8556,11 @@
                       {
                         "arguments": [
                           {
-                            "id": 621,
+                            "id": 623,
                             "name": "_userAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 612,
+                            "referencedDeclaration": 614,
                             "src": "798:12:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -8575,18 +8575,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 620,
+                          "id": 622,
                           "name": "isOwnerExist",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 610,
+                          "referencedDeclaration": 612,
                           "src": "785:12:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view returns (bool)"
                           }
                         },
-                        "id": 622,
+                        "id": 624,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8604,7 +8604,7 @@
                       },
                       {
                         "hexValue": "5573657220646f6573206e6f74206578697374",
-                        "id": 623,
+                        "id": 625,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8630,7 +8630,7 @@
                           "typeString": "literal_string \"User does not exist\""
                         }
                       ],
-                      "id": 619,
+                      "id": 621,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -8644,7 +8644,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 624,
+                    "id": 626,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8660,74 +8660,74 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 625,
+                  "id": 627,
                   "nodeType": "ExpressionStatement",
                   "src": "777:58:2"
                 },
                 {
                   "assignments": [
-                    628
+                    630
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 628,
+                      "id": 630,
                       "mutability": "mutable",
                       "name": "owner",
                       "nameLocation": "859:5:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 639,
+                      "scope": 641,
                       "src": "846:18:2",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Owner_$561_memory_ptr",
+                        "typeIdentifier": "t_struct$_Owner_$563_memory_ptr",
                         "typeString": "struct HouseOwner.Owner"
                       },
                       "typeName": {
-                        "id": 627,
+                        "id": 629,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 626,
+                          "id": 628,
                           "name": "Owner",
                           "nameLocations": [
                             "846:5:2"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 561,
+                          "referencedDeclaration": 563,
                           "src": "846:5:2"
                         },
-                        "referencedDeclaration": 561,
+                        "referencedDeclaration": 563,
                         "src": "846:5:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Owner_$561_storage_ptr",
+                          "typeIdentifier": "t_struct$_Owner_$563_storage_ptr",
                           "typeString": "struct HouseOwner.Owner"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 632,
+                  "id": 634,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 629,
+                      "id": 631,
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 566,
+                      "referencedDeclaration": 568,
                       "src": "867:5:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$561_storage_$",
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Owner_$563_storage_$",
                         "typeString": "mapping(address => struct HouseOwner.Owner storage ref)"
                       }
                     },
-                    "id": 631,
+                    "id": 633,
                     "indexExpression": {
-                      "id": 630,
+                      "id": 632,
                       "name": "_userAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 612,
+                      "referencedDeclaration": 614,
                       "src": "873:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -8741,7 +8741,7 @@
                     "nodeType": "IndexAccess",
                     "src": "867:19:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Owner_$561_storage",
+                      "typeIdentifier": "t_struct$_Owner_$563_storage",
                       "typeString": "struct HouseOwner.Owner storage ref"
                     }
                   },
@@ -8753,42 +8753,14 @@
                     "components": [
                       {
                         "expression": {
-                          "id": 633,
-                          "name": "owner",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 628,
-                          "src": "905:5:2",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Owner_$561_memory_ptr",
-                            "typeString": "struct HouseOwner.Owner memory"
-                          }
-                        },
-                        "id": 634,
-                        "isConstant": false,
-                        "isLValue": true,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberLocation": "911:8:2",
-                        "memberName": "username",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 558,
-                        "src": "905:14:2",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_string_memory_ptr",
-                          "typeString": "string memory"
-                        }
-                      },
-                      {
-                        "expression": {
                           "id": 635,
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 628,
-                          "src": "921:5:2",
+                          "referencedDeclaration": 630,
+                          "src": "905:5:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Owner_$561_memory_ptr",
+                            "typeIdentifier": "t_struct$_Owner_$563_memory_ptr",
                             "typeString": "struct HouseOwner.Owner memory"
                           }
                         },
@@ -8797,10 +8769,38 @@
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
+                        "memberLocation": "911:8:2",
+                        "memberName": "username",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 560,
+                        "src": "905:14:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 637,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 630,
+                          "src": "921:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Owner_$563_memory_ptr",
+                            "typeString": "struct HouseOwner.Owner memory"
+                          }
+                        },
+                        "id": 638,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
                         "memberLocation": "927:11:2",
                         "memberName": "userAddress",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 560,
+                        "referencedDeclaration": 562,
                         "src": "921:17:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -8808,7 +8808,7 @@
                         }
                       }
                     ],
-                    "id": 637,
+                    "id": 639,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -8821,15 +8821,15 @@
                       "typeString": "tuple(string memory,address)"
                     }
                   },
-                  "functionReturnParameters": 618,
-                  "id": 638,
+                  "functionReturnParameters": 620,
+                  "id": 640,
                   "nodeType": "Return",
                   "src": "897:42:2"
                 }
               ]
             },
             "functionSelector": "c3bb8121",
-            "id": 640,
+            "id": 642,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -8837,17 +8837,17 @@
             "nameLocation": "665:15:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 613,
+              "id": 615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 612,
+                  "id": 614,
                   "mutability": "mutable",
                   "name": "_userAddress",
                   "nameLocation": "699:12:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 640,
+                  "scope": 642,
                   "src": "691:20:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8856,7 +8856,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 611,
+                    "id": 613,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "691:7:2",
@@ -8872,17 +8872,17 @@
               "src": "680:38:2"
             },
             "returnParameters": {
-              "id": 618,
+              "id": 620,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 615,
+                  "id": 617,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 640,
+                  "scope": 642,
                   "src": "742:13:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8891,7 +8891,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 614,
+                    "id": 616,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "742:6:2",
@@ -8904,12 +8904,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 617,
+                  "id": 619,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 640,
+                  "scope": 642,
                   "src": "757:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8918,7 +8918,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 616,
+                    "id": 618,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "757:7:2",
@@ -8933,14 +8933,14 @@
               ],
               "src": "741:24:2"
             },
-            "scope": 641,
+            "scope": 643,
             "src": "656:291:2",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 642,
+        "scope": 644,
         "src": "60:890:2",
         "usedErrors": [],
         "usedEvents": []
@@ -8956,12 +8956,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE4c9e5FC3c1E44F39F663Df30A630513b6436505",
-      "transactionHash": "0xfcc52115bf738c16a844c73ab490ac443a3cb5108f04cc62ddbd40393dac3f65"
+      "address": "0xc6EEe0A916079bF9989227f922BEF44a110307C8",
+      "transactionHash": "0xfbbb15c302bb1c54ddd51ce4e29efa3c923d18d1c1a6a4df4dab9e4f6cf90971"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-04-15T08:34:45.866Z",
+  "updatedAt": "2024-04-15T08:26:54.309Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
