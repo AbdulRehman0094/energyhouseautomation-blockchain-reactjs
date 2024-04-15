@@ -40,15 +40,18 @@ function HomeRegistrationPage() {
 
   const [hide, setHide] = useState(false);
 
-  const registerHandler = () => {
-    const result= isOwnerExist(userAddress);
-    console.log(result);
 
-    if(result){
+  const registerHandler = async() => {
+   
+try {
+  
+} catch (error) {
+  
+}
+    
       localStorage.setItem('userAddress', userAddress);
-    addHouse(name,address,gridaddress,userAddress);
+    await addHouse(name,address,gridaddress,userAddress);
     registerOwner("abc",userAddress);
-    }
     setHide(true);
    
   };

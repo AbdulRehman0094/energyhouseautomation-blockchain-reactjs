@@ -1,6 +1,8 @@
 const { Web3 } = require('web3');
 const { abi: houseAbi } = require('./jsons/House.json');
 const { abi: gridStationAbi } = require('./jsons/GridStation.json');
+const { abi: houseOwnerAbi } = require('./jsons/HouseOwner.json');
+
 const houseContractAddress = '0xEcb6F6124827BE59e3C6d24Ed3FFF5c8975f142f';
 const gridStationAddress = '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
 const houseOwnerContractAddress = '0xaF5fF1573A6382cE09538710b65AC99e52bCEa6a';
@@ -10,7 +12,7 @@ const web3 = new Web3('http://127.0.0.1:9545/');
 
 const houseContract = new web3.eth.Contract(houseAbi, houseContractAddress);
 const gridStationContract = new web3.eth.Contract(gridStationAbi, gridStationAddress);
-const houseOwnerContract = new web3.eth.Contract(gridStationAbi, houseOwnerContractAddress);
+const houseOwnerContract = new web3.eth.Contract(houseOwnerAbi, houseOwnerContractAddress);
 
 
 
@@ -160,7 +162,6 @@ export const registerOwner = async ( username, userAddress) => {
     await houseOwnerContract.methods.registerOwner(username).send({ from: userAddress });
     console.log('Owner registered successfully.');
 };
-
 
 
 

@@ -164,11 +164,14 @@ img{
   justify-items: start;
   padding-left: 4px;
   align-items: center;
-  background: whitesmoke;
+  background: white;
   height: 400px;
   width: 400px;
   opacity: 0.9;
-  /* margin-left: 50px;  */
+  background-image: url('/public/energyhousebg.png');
+  background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center;
 } 
 
 h1{
@@ -316,3 +319,14 @@ input {
   font-size: large;
   margin: 8px;
 }
+
+.addedStyles{
+border: 5px solid rgb(56, 183, 56);
+border-radius: 20px;
+}
+.styles{
+  font-size: larger;
+  font-weight: bold;
+  color: black;
+}
+
