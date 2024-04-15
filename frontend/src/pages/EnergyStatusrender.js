@@ -10,10 +10,10 @@ const EnergyStatusrender = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        debugger;
         const data = await getAllHouses();
         console.log(data)
         const userAddress = localStorage.getItem("userAddress");
-        console.log(userAddress)
         const filteredProducts = data.filter(home => home.houseOwner.toLowerCase() == userAddress.toLowerCase());
         setHouseData(filteredProducts);
         console.log(filteredProducts);

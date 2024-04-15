@@ -173,7 +173,7 @@ export const isOwnerExist = async (userAddress) => {
 
 
 
-const getOwnerDetails = async ( userAddress) => {
+export const getOwnerDetails = async ( userAddress) => {
     const result = await houseOwnerContract.methods.getOwnerDetails(userAddress).call();
     console.log('Owner username:', result[0]);
     console.log('Owner address:', result[1]);

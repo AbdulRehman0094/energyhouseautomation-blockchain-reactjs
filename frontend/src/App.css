@@ -125,6 +125,8 @@ img{
 
 .overlay {
   position: absolute; 
+  display: flex;
+  justify-content: end;
   top: 0;
   left: 0;
   width: 100%;
@@ -329,4 +331,29 @@ border-radius: 20px;
   font-weight: bold;
   color: black;
 }
+.newclass{
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  padding-right: 8px;
+}
 
+.logbtn {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #3c5167; 
+  width: 200px;
+  height: 100px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+.logbtn:hover{
+  background-color: #0574ec; 
+
+}

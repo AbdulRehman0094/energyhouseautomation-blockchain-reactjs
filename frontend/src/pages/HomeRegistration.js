@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { addHouse } from '../blockchain';
-import { isOwnerExist } from '../blockchain';
-import { registerOwner } from '../blockchain';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { addHouse } from "../blockchain";
+import { isOwnerExist } from "../blockchain";
+import { registerOwner } from "../blockchain";
+import { useNavigate } from "react-router-dom";
 
 function HomeRegistrationPage() {
-  const gridaddress= '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [userAddress, setUserAddress] = useState('');
+  const gridaddress = "0x591D8c585558b2cCa052A9B8e042d3EffA379deA";
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [userAddress, setUserAddress] = useState("");
+  const navigate= useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -23,44 +24,40 @@ function HomeRegistrationPage() {
     setUserAddress(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', { name, address, userAddress });
-    localStorage.setItem('userAddress', userAddress.toString());
+  const isFormEmpty = () => {
+    return !name.trim() && !address.trim() && !userAddress.trim();
   };
-    
-    const isFormEmpty = () => {
-      return !name.trim() && !address.trim() && !userAddress.trim();
-    };
-  
-   
-    const isFormFilled = () => {
-      return name.trim() && address.trim() && userAddress.trim();
-    };
+
+  const isFormFilled = () => {
+    return name.trim() && address.trim() && userAddress.trim();
+  };
 
   const [hide, setHide] = useState(false);
 
+  const registerHandler = async () => {
+    try {
+      localStorage.setItem("userAddress", userAddress);
+      const result= await isOwnerExist(userAddress)
+      if(result){
+        alert('Already Registered. Cannot Register Again!')
+      }
+      else{
+        await registerOwner(name, userAddress);
+        await addHouse(name, address, gridaddress, userAddress);
+        alert('House Succefully Registered!')
 
-  const registerHandler = async() => {
-   
-try {
-  
-} catch (error) {
-  
-}
-    
-      localStorage.setItem('userAddress', userAddress);
-    await addHouse(name,address,gridaddress,userAddress);
-    registerOwner("abc",userAddress);
-    setHide(true);
-   
+      }
+      setHide(true);
+    } catch (error) {
+      console.log('error')
+    }
   };
 
   return (
     <>
       <div className="form-container">
-        <div className='bgimg'></div>
-        <form onSubmit={handleSubmit}>
+        <div className="bgimg"></div>
+        <form>
           <label>
             Name:
             <input type="text" value={name} onChange={handleNameChange} />
@@ -71,10 +68,21 @@ try {
           </label>
           <label>
             User Address:
-            <input type="text" value={userAddress} onChange={handleUserAddressChange} />
+            <input
+              type="text"
+              value={userAddress}
+              onChange={handleUserAddressChange}
+            />
           </label>
-          <Link to='/dashboard'className='comp'>
-            <button type="submit" onClick={registerHandler} className='register-button' disabled={!isFormEmpty() && !isFormFilled()}>Register</button>
+          <Link to="/dashboard" className="comp">
+            <button
+              type="submit"
+              onClick={registerHandler}
+              className="register-button"
+              disabled={!isFormEmpty() && !isFormFilled()}
+            >
+              Register
+            </button>
           </Link>
         </form>
       </div>
