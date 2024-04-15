@@ -8,6 +8,8 @@ contract EnergyManagementSystem {
     uint256 public constant sellUnitsToGridPrice = 10; // per unit
     uint256 public constant buyUnitsFromGridPrice = 15; // per unit
 
+    constructor() payable {}
+
     struct HouseRecord {
         uint256 totalUnitsSold;
         uint256 unitsSoldButNotPaid;
@@ -110,7 +112,10 @@ contract EnergyManagementSystem {
             houses[_houseId].boughtFromGrid +=
                 houses[_houseId].energyConsumption -
                 houses[_houseId].energyProduction;
-        } else {
+        } else if (
+            houses[_houseId].energyConsumption <
+            houses[_houseId].energyProduction
+        ) {
             sellToGrid(
                 _houseId,
                 houses[_houseId].energyProduction -
@@ -141,7 +146,10 @@ contract EnergyManagementSystem {
             houses[_houseId].boughtFromGrid +=
                 houses[_houseId].energyConsumption -
                 houses[_houseId].energyProduction;
-        } else {
+        } else if (
+            houses[_houseId].energyConsumption <
+            houses[_houseId].energyProduction
+        ) {
             sellToGrid(
                 _houseId,
                 houses[_houseId].energyProduction -
@@ -187,9 +195,7 @@ contract EnergyManagementSystem {
         totalSoldToGrid += _units;
         houseRecords[msg.sender].totalUnitsSold += _units;
         houseRecords[msg.sender].unitsSoldButNotPaid += _units;
-        if (houseRecords[msg.sender].unitsSoldButNotPaid >= 20) {
-            payHouse(msg.sender);
-        }
+        payHouse(msg.sender, amountToPay);
         emit EnergyTransaction(
             msg.sender,
             houses[_houseId].gridStation,
@@ -197,9 +203,7 @@ contract EnergyManagementSystem {
         );
     }
 
-    function payHouse(address _houseOwner) private {
-        uint256 amountToPay = houseRecords[_houseOwner].unitsSoldButNotPaid *
-            sellUnitsToGridPrice;
+    function payHouse(address _houseOwner, uint256 amountToPay) private {
         payable(_houseOwner).transfer(amountToPay);
         houseRecords[_houseOwner].unitsSoldButNotPaid = 0;
     }
