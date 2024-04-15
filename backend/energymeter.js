@@ -113,22 +113,26 @@ async function main() {
 
     // await registerUser('abc');
     // await addHouse('abc house', 'abc address', '0x0148261cb5ebefcb6a3835b9422f4a1d7a7b2a07');
-    const houses = await getAllHouses();
-    for (let i = 0; i < houses.length; i++) {
-        const house = houses[i];
-        const consumption = parseInt(house.energyConsumption.toString());
-        const production = parseInt(house.energyProduction.toString());
-        if (production >= consumption) {
-            const newConsumption = production + 2;
-            await updateEnergyConsumption(house.houseId, newConsumption, (newConsumption - production) * 150)
-        } else if (consumption > production) {
-            const newProduction = consumption + 2;
-            await updateEnergyProduction(house.houseId, newProduction);
+    while (true) {
+        const houses = await getAllHouses();
+        for (let i = 0; i < houses.length; i++) {
+            const house = houses[i];
+            const consumption = parseInt(house.energyConsumption.toString());
+            const production = parseInt(house.energyProduction.toString());
+            if (production >= consumption) {
+                const newConsumption = production + 2;
+                await updateEnergyConsumption(house.houseId, newConsumption, (newConsumption - production) * 150)
+            } else if (consumption > production) {
+                const newProduction = consumption + 2;
+                await updateEnergyProduction(house.houseId, newProduction);
+            }
+            await getHouseById(house.houseId);
+
         }
-        await getHouseById(house.houseId);
-
+        await sleep(60000);
     }
-
 }
-
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 main();
