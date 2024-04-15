@@ -1,9 +1,9 @@
 const { Web3 } = require('web3');
 const { abi: houseAbi } = require('./build/contracts/House.json');
 const { abi: gridStationAbi } = require('./build/contracts/GridStation.json');
-const houseContractAddress = '0x9CEEF5fC80dC527E54C2C6FB04cF0b5800c1821F';
-const gridStationAddress = '0xc44A77cA13D522777C4CA72EAb17df52D42993D9';
-const houseOwnerContractAddress = '0xc6EEe0A916079bF9989227f922BEF44a110307C8';
+const houseContractAddress = '0x3E62bc704846aeF10d088b7eEfDF654959B462f8';
+const gridStationAddress = '0xE4Dd50eaF73a77C371e6a9dcEA42DCF3e99Ac5e1';
+const houseOwnerContractAddress = '0xE4c9e5FC3c1E44F39F663Df30A630513b6436505';
 const web3 = new Web3('http://127.0.0.1:9545/');
 
 
@@ -163,12 +163,12 @@ const energyMeter = async () => {
     // addHouse('My House 1', '123 Main St 1', gridStationAddress, accounts[1]);
     // getAllHouses();
     // getHouseById(1);
-    // updateEnergyProduction(1, 2, accounts[1]);
+    // updateEnergyProduction(1, 5, accounts[1]);
     // updateEnergyConsumption(1, 10, accounts[1]);
     // await getTotalSoldToGrid();
     // await getTotalBoughtFromGrid();
     // sellUnitsToGrid(10); // Sell 10 units to the grid
-    // buyUnitsFromGrid(5); // Buy 5 units from the grid
+    buyUnitsFromGrid(5); // Buy 5 units from the grid
     // payHouse('0x456def...');
 }
 energyMeter();

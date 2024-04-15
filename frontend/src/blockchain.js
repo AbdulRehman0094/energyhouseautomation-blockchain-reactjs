@@ -1,9 +1,9 @@
 const { Web3 } = require('web3');
 const { abi: houseAbi } = require('./jsons/House.json');
 const { abi: gridStationAbi } = require('./jsons/GridStation.json');
-const houseContractAddress = '0xEcb6F6124827BE59e3C6d24Ed3FFF5c8975f142f';
-const gridStationAddress = '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
-const houseOwnerContractAddress = '0xaF5fF1573A6382cE09538710b65AC99e52bCEa6a';
+const houseContractAddress = '0x3E62bc704846aeF10d088b7eEfDF654959B462f8';
+const gridStationAddress = '0xE4Dd50eaF73a77C371e6a9dcEA42DCF3e99Ac5e1';
+const houseOwnerContractAddress = '0xE4c9e5FC3c1E44F39F663Df30A630513b6436505';
 const web3 = new Web3('http://127.0.0.1:9545/');
 
 
@@ -18,7 +18,7 @@ export async function addHouse(houseName, houseAddress, gridStationAddress, user
 
         const result = await houseContract.methods.addHouse(houseName, houseAddress, gridStationAddress).send({ from: userAddress, gas: 300000 });
         console.log('New house added:', result);
-        
+
     } catch (error) {
         console.error('Error adding house:', error);
     }

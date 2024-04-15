@@ -64,7 +64,7 @@ contract House {
     function getAllHouses() external view returns (HouseInfo[] memory) {
         HouseInfo[] memory allHouses = new HouseInfo[](houseCount);
         for (uint256 i = 1; i <= houseCount; i++) {
-            allHouses[i - 1] = houses[i - 1];
+            allHouses[i - 1] = houses[i];
         }
         return allHouses;
     }
