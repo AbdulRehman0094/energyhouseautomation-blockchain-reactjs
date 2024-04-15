@@ -4,7 +4,7 @@ const web3 = new Web3('http://127.0.0.1:9545/');
 
 const contractABI = require('./build/contracts/EnergyManagementSystem.json').abi;
 
-const contractAddress = '0xE403eE6AbCD9dE0F7FCAa4f9b1F46a4f97d2E73C';
+const contractAddress = '0x591D8c585558b2cCa052A9B8e042d3EffA379deA';
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 async function registerUser(username) {
